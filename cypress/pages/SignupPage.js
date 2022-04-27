@@ -10,33 +10,33 @@ class SignupPage{
             .should('have.text', 'Cadastre-se para  fazer entregas')
     }
 
-    fillForm(entregador){
+    fillForm(deliver){
         cy.get('input[name="name"]')
-            .type(entregador.nome)
+            .type(deliver.name)
         cy.get('input[name="cpf"]')
-            .type(entregador.cpf)
+            .type(deliver.cpf)
         cy.get('input[name="email"]')
-            .type(entregador.email)
+            .type(deliver.email)
         cy.get('input[name="whatsapp"]')
-            .type(entregador.whatsapp)
+            .type(deliver.whatsapp)
 
         cy.get('input[name="postalcode"]')
-            .type(entregador.endereco.cep)
+            .type(deliver.address.postalcode)
         cy.get('input[type=button][value="Buscar CEP"]')
             .click()
         cy.get('input[name="address-number"]')
-            .type(entregador.endereco.numero)
+            .type(deliver.address.number)
         cy.get('input[name="address-details"]')
-            .type(entregador.endereco.complemento)
+            .type(deliver.address.details)
 
-        cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-        cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
-        cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+        cy.get('input[name="address"]').should('have.value', deliver.address.street)
+        cy.get('input[name="district"]').should('have.value', deliver.address.district)
+        cy.get('input[name="city-uf"]').should('have.value', deliver.address.city_state)
 
-        cy.contains('.delivery-method li', entregador.metodo_entrega)
+        cy.contains('.delivery-method li', deliver.delivery_method)
             .click()
 
-        cy.get('input[accept^="image"]').attachFile(entregador.cnh)
+        cy.get('input[accept^="image"]').attachFile(deliver.cnh)
 
     }
 
@@ -49,6 +49,10 @@ class SignupPage{
         cy.get('.swal2-container .swal2-html-container')
             .should('have.text', expectedMessage)
     }
+
+    alertMessageShouldBe(expectedMessage){
+        cy.get('.alert-error').should('have.text', expectedMessage)
+    }
 }
 
-export default SignupPage;
+export default new SignupPage;
