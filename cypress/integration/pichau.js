@@ -15,9 +15,6 @@ describe('fazer a compra de um pc gamer', function(){
 
     it('logar', function(){
         acoes.login('robson-araujo29@hotmail.com', 'robson123')
-        acoes.submit()
-
-
     })
 
     it('confimar endereço', function(){
@@ -31,15 +28,14 @@ describe('fazer a compra de um pc gamer', function(){
     })
 
     it('preencher a forma de pagamento', function(){
-        acoes.cartao('2322 4242 4242 4242', '554', 'Novembro', '2027', 'Robson Lopes', ' 33.434.343-43')
+        acoes.cartao('2322 4242 4242 4242', '554', 'Novembro', '2027', 'Robson Lopes', ' 448.968.188-73')
 
     })
 
 })
 
 describe('resetar a pagina', function(){
-
-
+    
     it('zerar o carrinho', function(){
         acoes.resetarcarrinho()
     })
@@ -51,7 +47,25 @@ describe('resetar a pagina', function(){
     it('logout', function(){
         acoes.logout()
     })
+
 })
+
+describe('Preço Incoerente', function(){
+   
+    it('Preço Discrepante', function(){
+        acoes.preçoincoerente()
+    })
+})
+
+describe('Endereço Incoerente', function(){
+
+    it('Rua Discrepante', function(){
+        acoes.acesso()
+        acoes.login('robson-araujo29@hotmail.com', 'robson123')
+        acoes.enderecoincoerente('06529016', 'Robson', 'Lopes', 'Rua Lua Cheia', 'Jardim do Luar (Fazendinha)', 'Sao Paulo', 'Santana de Parnaíba', '(11)973949394', '26')
+    })
+})
+
 
 
   
