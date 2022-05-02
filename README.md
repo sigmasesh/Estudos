@@ -31,7 +31,7 @@ Você ira precisar ter em sua máquina as seguintes ferramentas:
 
 ### Executando o projeto
 - Clone esse repositório:
-'$ git clone -b master estudos'
+'$ git clone -b master Estudos'
 
 - Acesse a pasta do projeto no CMD:
 'cd testepichau/cypress/integration'
