@@ -4,10 +4,10 @@ describe('fazer a compra de um pc gamer', function(){
     
     Cypress.config('defaultCommandTimeout', 10000);
     
-    /*afterEach(() => {
+    afterEach(() => {
         cy.get('p').contains('PICHAU INFORMÁTICA® É UMA MARCA REGISTRADA DE BAZAM E PICHAU INFORMATICA LTDA | CNPJ: 09.376.495/0001-22')
         cy.get('address').contains('Avenida Santos Dumont, 7199 - Aventureiro, Joinville - SC - 89226-435')
-    });*/
+    });
 
     it('selecionar o computador', function(){
         acoes.acesso()
