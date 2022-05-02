@@ -31,7 +31,8 @@ Você ira precisar ter em sua máquina as seguintes ferramentas:
 
 ### Executando o projeto
 - Clone esse repositório:
-'git clone <https://github.com/sigmasesh/estudos/tree/master>'
+'$ git clone -b master estudos'
+
 - Acesse a pasta do projeto no CMD:
 'cd testepichau/cypress/integration'
 - Instale as dependências:
